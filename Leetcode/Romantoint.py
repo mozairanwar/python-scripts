@@ -1,8 +1,8 @@
 import re
-def romanToInt(self, s: str) -> int:
+def romanToInt(s: str) -> int:
         a=[]
         re.findall("I[VX]|X[LC]|C[DM]",s)
-        for i in s:
+        """ for i in s:
             if i is "I":
                 if s[i+1] is "V":
                     a.append(4)
@@ -21,6 +21,9 @@ def romanToInt(self, s: str) -> int:
             if i is "D":
                 a.append(500)
             if i is "M":
-                a.append(1000)
+                a.append(1000) """
             
         return sum(a)
+
+s="MCMXCIV"
+romanToInt(s)
