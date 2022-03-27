@@ -15,3 +15,15 @@ def isCryptSolution(crypt, solution):
     if a + b == c and len(crypt[0]) == 1 and len(crypt[1]) == 1:
         return True
     return False
+
+crypt=["SEND", "MORE", "MONEY"]
+solution=[
+    ["O","0"], 
+    ["M","1"], 
+    ["Y","2"], 
+    ["E","5"], 
+    ["N","6"], 
+    ["D","7"], 
+    ["R","8"], 
+    ["S","9"]
+    ]

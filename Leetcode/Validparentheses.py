@@ -20,7 +20,7 @@ def isValid(s: str) -> bool:
 
     return bool(a==[])
 
-s="]"
+s="(}"
 
 if isValid(s):
     print("Valid")

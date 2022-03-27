@@ -1,29 +1,57 @@
 import re
 def romanToInt(s: str) -> int:
-        a=[]
-        re.findall("I[VX]|X[LC]|C[DM]",s)
-        """ for i in s:
-            if i is "I":
-                if s[i+1] is "V":
-                    a.append(4)
-                elif s[i+1] is "X":
-                    a.append(9)
-                else:
-                    a.append(1)
-            if i is "V":
-                a.append(5)
-            if i is "X":
-                a.append(10)
-            if i is "L":
-                a.append(50)
-            if i is "C":
-                a.append(100)
-            if i is "D":
-                a.append(500)
-            if i is "M":
-                a.append(1000) """
-            
-        return sum(a)
+        romdict={
+                "I":1,
+                "V":5,
+                "X":10,
+                "L":50,
+                "C":100,
+                "D":500,
+                "M":1000
+            }
+        value=0
+        for i in range(len(s)):
+            if i+1 < len(s) and romdict[s[i]] < romdict[s[i+1]]:
+                value-=romdict[s[i]]
+            else:
+                value+=romdict[s[i]]
+        
+        return value
+        # a=re.findall("I[VX]|X[LC]|C[DM]|I|V|X|L|C|D|M",s)
+        # b=re.findall("I[VX]|X[LC]|C[DM]", s)
+        # g=[]
+        # for i in a[:]:
+        #     if i in b:
+        #         a.remove(i)
+        # romdict={
+        #         "I":'1',
+        #         "V":'5',
+        #         "X":'10',
+        #         "L":'50',
+        #         "C":'100',
+        #         "D":'500',
+        #         "M":'1000'
+        #     }
+        
+        # for i in a:
+        #     z=i.maketrans(romdict)
+        #     g.append(int(i.translate(z)))
+
+        # for i in b:
+        #     if i == "IV":
+        #         g.append(4)
+        #     if i == "IX":
+        #         g.append(9)
+        #     if i == "XL":
+        #         g.append(40)
+        #     if i == "XC":
+        #         g.append(90)
+        #     if i == "CD":
+        #         g.append(400)
+        #     if i == "CM":
+        #         g.append(900)
+        
+        # return value(g)
 
 s="MCMXCIV"
-romanToInt(s)
+print(romanToInt(s))
