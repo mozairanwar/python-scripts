@@ -6,5 +6,5 @@ def sortedSquares(nums: list[int]) -> list[int]:
     nums.sort()
     return nums
 
-nums = [-7,-3,2,3,11]
+nums = [-4,-1,0,3,10]
 print(sortedSquares(nums))
